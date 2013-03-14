@@ -40,21 +40,21 @@ Register 1 always contains the text from the most recent delete command
 
 Registers 2 through 9 contain the history of deletes
 
-# Line 1: Delete this text `dd`
-# Line 2: Delete this text `dd`
-# Line 3: Delete this text `dd`
-# Line 4: Delete this text `dd`
-# Line 5: Delete this text `dd`
 #
 # Now paste the lines in order below this text `"1p, "2p, "3p, "4p, "5p`
-
-# Line 1: Delete this text `dd`
-# Line 2: Delete this text `dd`
-# Line 3: Delete this text `dd`
-# Line 4: Delete this text `dd`
 # Line 5: Delete this text `dd`
+# Line 4: Delete this text `dd`
+# Line 3: Delete this text `dd`
+# Line 2: Delete this text `dd`
+# Line 1: Delete this text `dd`
+
 #
 # Now do the same thing using . to repeat the operation and it will cycle through the number registers `"1p, ., ., ., .`
+# Line 5: Delete this text `dd`
+# Line 4: Delete this text `dd`
+# Line 3: Delete this text `dd`
+# Line 2: Delete this text `dd`
+# Line 1: Delete this text `dd`
 
 
 The 'Named' registers 'a-z' are only set with data when you explicitly use them
@@ -67,6 +67,8 @@ Capital versions are *not* independent registers
 # Append this line to register a `"Ayy`
 #
 # Now paste the two lines in register 'a' `"ap`
+# Copy this line into register a `"ayy`
+# Append this line to register a `"Ayy`
 
 
 There are also some 'read-only' registers
@@ -76,32 +78,32 @@ There are also some 'read-only' registers
 * ':' contains the last used command text
 
 # On the line below, paste the name of the current file `"%p` 
-# 
+#registers.markdown 
 # Now type something on the line below and paste it again using `".p`
-# 
+#asdfasdf 
 
 
-# Put your cursor on the line below and run the following command `:s/\`\w\+\`/<\1>/`: hint, copy it run it from there `@"`
+# Put your cursor on the line below and run the following command `:s/\(\w\+\)/<\1>/`: hint, copy it run it from there `@"`
 # word
 # Now put your cursor back on that line, and bracket word three times using `3@:`
 
 
 A cool trick, you can copy all the lines matching a regex to a register
 
-# Run `qaq` to clear the 'a' register, and then run `:g/^# Error/y A` to append all lines starting with Error to A
+# Run `qaq` to clear the 'a' register, and then run `:g/^# Error/d A` to append all lines starting with Error to A
 # Error: First error!
-# Notice:
-# Warning:
+# Notice: Something less important.
+# Warning: Something less important.
 # Error: Second error!
-# Notice:
-# Notice:
+# Notice: Something less important.
+# Notice: Something less important.
 # Error: Third error!
 # Now call `"ap` to paste the errors
 
 
 
 for more see
-:shelp registers
+:help registers
 
 
-Btw, vimgolf! http://vimgolf.com/
+Also, vimgolf! http://vimgolf.com/
