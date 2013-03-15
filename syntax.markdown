@@ -22,7 +22,7 @@ endif
 The `:highlight` command will allow you to configure different 'highlight groups'
 with a chosen color.
 
-If you are in a cterm, try:
+Try:
 # Type `:highlight Normal ctermbg=black ctermfg=white guibg=black guifg=white`
 
 Pretty, isn't it!
